@@ -1,0 +1,5 @@
+<?php
+
+/**
+ * Register admin menu 
+ */
