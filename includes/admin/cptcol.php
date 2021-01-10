@@ -55,7 +55,7 @@ class CptCol
                 break;
 
             case 'shortcode':
-                echo '[ nht_simple_slide id="' . esc_html($post_id) . '" ]';
+                echo '[ nht_slider id="' . esc_html($post_id) . '" ]';
                 break;
         }
     }

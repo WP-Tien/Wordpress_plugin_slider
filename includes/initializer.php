@@ -3,11 +3,15 @@
 namespace NHTSlider;
 
 use NHTSlider\Includes\Front as Front;
+use NHTSlider\Includes\Front\Shortcode as Shortcode;
+use NHTSlider\Includes\Front\Enqueue as Enqueue;
+
 use NHTSlider\Includes\Admin as Admin;
 use NHTSlider\Includes\Admin\CptSlider as CptSlider;
 use NHTSlider\Includes\Admin\CptCss as CptCss;
 use NHTSlider\Includes\Admin\CptMetaBox as CptMetaBox;
 use NHTSlider\Includes\Admin\CptCol as CptCol;
+use NHTSlider\Includes\Admin\CptAjax as CptAjax;
 
 defined('ABSPATH') or die('Something wrong with you !');
 
@@ -80,13 +84,17 @@ final class NHTSlider
         // Construct the instances.
         if (is_admin()) {
             new Admin();
+
             // Custom post type
             new CptSlider();
             new CptCss();
             new CptMetaBox();
             new CptCol();
+            new CptAjax();
         } else {
             new Front();
+            new Shortcode();
+            new Enqueue();
         }
     }
 

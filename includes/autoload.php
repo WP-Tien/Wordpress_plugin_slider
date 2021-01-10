@@ -15,9 +15,10 @@ class Autoloader
             $path = '';
 
             $arr_path = Autoloader::handle_directory($class_name);
+
             // Check if path is `nthslider` 
             if ($arr_path[0] == 'nhtslider') {
-                array_splice($arr_path, 0, 2); // clean up
+                array_splice($arr_path, 0, 2);
 
                 if (count($arr_path) >= 2) {
                     for ($i = 0; $i < ((count($arr_path)) - 1); $i++) {
